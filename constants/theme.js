@@ -11,6 +11,7 @@ export const SIZES = {
   medium: 16,
   large: 18,
   extraLarge: 24,
+  header: 30,
 };
 export const FONTS = {
   bold: "InterBold",
