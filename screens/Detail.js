@@ -14,7 +14,7 @@ import {
   SubInfo,
 } from "../components";
 import { CircleButton, RectButton } from "../components/Button";
-import { assets, SHADOWS, SIZES } from "../constants";
+import { assets, COLORS, FONTS, SHADOWS, SIZES } from "../constants";
 
 const DetailsHeader = ({ data, navigation }) => (
   <View style={{ width: "100%", height: 373 }}>
@@ -69,7 +69,20 @@ const Detail = ({ route, navigation }) => {
           <React.Fragment>
             <DetailsHeader data={data} navigation={navigation} />
             <SubInfo />
-            <DetailDesc data={data} />
+            <View style={{ padding: SIZES.font }}>
+              <DetailDesc data={data} />
+              {data.bids.length > 0 && (
+                <Text
+                  style={{
+                    fontSize: SIZES.font,
+                    fontFamily: FONTS.semiBold,
+                    color: COLORS.primary,
+                  }}
+                >
+                  Current Bid
+                </Text>
+              )}
+            </View>
           </React.Fragment>
         )}
       />
